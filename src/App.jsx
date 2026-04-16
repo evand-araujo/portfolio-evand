@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header style={{ padding: "20px", textAlign: "center" }}>
+    <header className="header">
       <h1>Evand Araújo</h1>
       <p>Desenvolvedor Front-end em formação</p>
     </header>
@@ -11,43 +11,37 @@ function Projetos() {
   const projetos = [
     {
       nome: "Portfólio em React",
-      descricao: "Aplicação desenvolvida com React utilizando componentização e renderização dinâmica.",
+      descricao: "Aplicação com componentização e renderização dinâmica.",
     },
     {
       nome: "Página de Login",
-      descricao: "Interface simples de autenticação com HTML, CSS e JavaScript.",
+      descricao: "Interface simples utilizando HTML, CSS e JavaScript.",
     },
     {
       nome: "Site Institucional",
-      descricao: "Website estático com estrutura responsiva e design básico.",
+      descricao: "Website responsivo com layout organizado.",
     },
   ];
 
   return (
-    <section style={{ padding: "20px" }}>
-      <h2>Projetos Desenvolvidos</h2>
+    <section className="projetos">
+      <h2>Projetos</h2>
 
-      {projetos.map((projeto, index) => (
-        <div
-          key={index}
-          style={{
-            marginBottom: "15px",
-            padding: "10px",
-            background: "#f0f0f0",
-            borderRadius: "8px",
-          }}
-        >
-          <h3>{projeto.nome}</h3>
-          <p>{projeto.descricao}</p>
-        </div>
-      ))}
+      <div className="grid">
+        {projetos.map((projeto, index) => (
+          <div key={index} className="card">
+            <h3>{projeto.nome}</h3>
+            <p>{projeto.descricao}</p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Projetos />
     </div>
